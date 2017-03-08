@@ -1,0 +1,28 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./db.development.sqlite",
+    "logging": false
+  },
+
+  "production": {
+    "database": "db",
+    "username": "ABCD",
+    "password": "PWD",
+    "host": "database.windows.net",
+    "dialect": "mssql",
+    "port": 1433,
+    "dialectOptions": {
+      "encrypt": true,
+      "requestTimeout": 30000
+    },
+    "logging": false
+
+  },
+
+  "test": {
+    "dialect": "sqlite",
+    "storage": ":memory:",
+    "logging": false
+  }
+}
