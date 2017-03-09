@@ -31,10 +31,12 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     classMethods: {
       associate: function (models) {
+        // Task.hasOne(models.User)
+
         Task.belongsTo(models.User, {
-          onDelete: "CASCADE",
+          onDelete: "SET NULL",
           foreignKey: {
-            allowNull: false
+            allowNull: true
           }
         });
       }

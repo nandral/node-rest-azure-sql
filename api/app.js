@@ -21,12 +21,13 @@ app.set('view engine', 'html');
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 
-//extract user_id
-const extractUserId = (req, res, next) => {
-  req.body.user_id = req.params.user_id;
-  next();
-}
-app.use('/api/users/:user_id/tasks', extractUserId, tasksRouter);
+// //extract user_id
+// const extractUserId = (req, res, next) => {
+//   req.body.user_id = req.params.user_id;
+//   next();
+// }
+// // app.use('/api/users/:user_id/tasks', extractUserId, tasksRouter);
+app.use("/api/tasks",tasksRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

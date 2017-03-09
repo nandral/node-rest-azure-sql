@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
         }, element.toJSON());
         //Add self links, task links
         userRtn.links = {};
-        userRtn.links.self = 'http://' + req.headers.host + '/api/users/' + userRtn._id
+        userRtn.links.self = `http://${req.headers.host}/api/users/${userRtn._id}`
         userRtn.Tasks = prepareTasksForUser(req, userRtn.Tasks);
         returnUsers.push(userRtn);
       });
@@ -78,7 +78,7 @@ const prepareTasksForUser = (req, tasks) => {
       _type: "Task"
     }, task)
     taskRtn.links = {};
-    let self = 'http://' + req.headers.host + '/api/users/' + task.UserId + '/tasks/' + task._id;
+    let self = `http://${req.headers.host}/api/tasks/${task._id}`;
     taskRtn.links.self = self.replace(' ', '%20');
     tasksWithLinks.push(taskRtn)
   }

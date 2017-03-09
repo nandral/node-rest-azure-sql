@@ -11,7 +11,9 @@ router.get('/', function (req, res) {
     database:"Azure SQL",
     ORM:"SequelizeJS",
     dataLinks:{
-      users: 'http://' + req.headers.host + '/api/users/'
+      users: 'http://' + req.headers.host + '/api/users/',
+      tasks: 'http://' + req.headers.host + '/api/tasks/'
+
     }
   });
 
